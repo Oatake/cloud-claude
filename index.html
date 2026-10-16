@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thitiwut E. — Resume</title>
+<meta name="description" content="Online resume of Thitiwut E.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f2ec;
+    --paper: #fffdf9;
+    --ink: #1c1b19;
+    --muted: #6b665d;
+    --line: #e3ddd2;
+    --accent: #c4512b;
+    --accent-soft: #f6e4dc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141312;
+      --paper: #1d1c1a;
+      --ink: #ece8e1;
+      --muted: #9b958a;
+      --line: #33302c;
+      --accent: #ec7b55;
+      --accent-soft: #3a261e;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans Thai", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 48px 16px;
+  }
+  .sheet {
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 56px 56px 48px;
+  }
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: end;
+    padding-bottom: 32px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(38px, 7vw, 60px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .role { margin-top: 12px; font-size: 18px; color: var(--muted); }
+  .contact {
+    list-style: none;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    text-align: right;
+    line-height: 1.9;
+  }
+  .contact a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+  .contact a:hover { border-color: var(--accent); color: var(--accent); }
+
+  .summary {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 21px;
+    line-height: 1.5;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .summary em { font-style: normal; background: var(--accent-soft); padding: 0 4px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+    padding-top: 36px;
+  }
+  h2 {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  section + section { margin-top: 40px; }
+
+  .job { position: relative; padding-left: 20px; border-left: 2px solid var(--line); }
+  .job + .job { margin-top: 28px; }
+  .job::before {
+    content: ""; position: absolute; left: -6px; top: 8px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--paper); border: 2px solid var(--accent);
+  }
+  .job-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .job h3 { font-size: 17px; font-weight: 600; }
+  .job .org { color: var(--accent); }
+  .date { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--muted); white-space: nowrap; }
+  .job ul { margin-top: 8px; padding-left: 18px; color: var(--ink); }
+  .job li { margin-top: 4px; }
+  .job li::marker { color: var(--muted); }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tags span {
+    font-size: 14px;
+    padding: 4px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+  }
+  .edu h3 { font-size: 16px; font-weight: 600; }
+  .edu p { font-size: 14px; color: var(--muted); }
+  .edu + .edu { margin-top: 16px; }
+  .lang { list-style: none; font-size: 15px; }
+  .lang li { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed var(--line); }
+  .lang li span:last-child { color: var(--muted); font-size: 14px; }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .print-btn {
+    font: inherit; color: var(--ink); background: none;
+    border: 1px solid var(--line); border-radius: 4px; padding: 4px 10px; cursor: pointer;
+  }
+  .print-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  @media (max-width: 720px) {
+    body { padding: 16px; }
+    .sheet { padding: 32px 22px; }
+    header { grid-template-columns: 1fr; }
+    .contact { text-align: left; }
+    .grid { grid-template-columns: 1fr; gap: 40px; }
+    .summary { font-size: 18px; }
+  }
+  @media print {
+    :root { --bg: #fff; --paper: #fff; --ink: #000; --muted: #555; --line: #ddd; }
+    body { padding: 0; }
+    .sheet { border: 0; padding: 0; }
+    .print-btn { display: none; }
+  }
+</style>
+</head>
+<body>
+<main class="sheet">
+  <header>
+    <div>
+      <p class="eyebrow">Resume · Bangkok, Thailand</p>
+      <h1>Thitiwut E.</h1>
+      <p class="role">Product Engineer — web &amp; cloud</p>
+    </div>
+    <ul class="contact">
+      <li><a href="mailto:hello@example.com">hello@example.com</a></li>
+      <li><a href="https://github.com/Oatake">github.com/Oatake</a></li>
+      <li><a href="https://www.linkedin.com/">linkedin.com/in/your-name</a></li>
+      <li>+66 00 000 0000</li>
+    </ul>
+  </header>
+
+  <p class="summary">
+    Engineer with <em>8+ years</em> building web products end to end — from the first sketch to running it in the cloud. I like small teams, clear problems, and shipping things people actually use.
+  </p>
+
+  <div class="grid">
+    <div>
+      <section>
+        <h2>Experience</h2>
+        <article class="job">
+          <div class="job-head">
+            <h3>Senior Software Engineer · <span class="org">Company A</span></h3>
+            <span class="date">2023 — Now</span>
+          </div>
+          <ul>
+            <li>Led a team of 4 rebuilding the booking platform; cut page load time by 45%.</li>
+            <li>Moved core services to managed cloud, lowering monthly infra cost by 30%.</li>
+            <li>Introduced code review guidelines and CI checks adopted across 3 teams.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <div class="job-head">
+            <h3>Software Engineer · <span class="org">Company B</span></h3>
+            <span class="date">2020 — 2023</span>
+          </div>
+          <ul>
+            <li>Built the customer dashboard used daily by 20,000+ users.</li>
+            <li>Designed internal APIs and wrote the onboarding docs for new engineers.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <div class="job-head">
+            <h3>Junior Developer · <span class="org">Company C</span></h3>
+            <span class="date">2017 — 2020</span>
+          </div>
+          <ul>
+            <li>Shipped features for an e-commerce site across web and mobile.</li>
+            <li>Maintained automated test suites and release scripts.</li>
+          </ul>
+        </article>
+      </section>
+    </div>
+
+    <aside>
+      <section>
+        <h2>Skills</h2>
+        <div class="tags">
+          <span>TypeScript</span><span>React</span><span>Node.js</span>
+          <span>Python</span><span>SQL</span><span>Azure</span>
+          <span>Docker</span><span>CI/CD</span><span>System design</span>
+        </div>
+      </section>
+      <section>
+        <h2>Education</h2>
+        <div class="edu">
+          <h3>B.Eng. Computer Engineering</h3>
+          <p>University Name · 2013 — 2017</p>
+        </div>
+        <div class="edu">
+          <h3>Azure Fundamentals (AZ-900)</h3>
+          <p>Certification · 2022</p>
+        </div>
+      </section>
+      <section>
+        <h2>Languages</h2>
+        <ul class="lang">
+          <li><span>Thai</span><span>Native</span></li>
+          <li><span>English</span><span>Professional</span></li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+
+  <footer>
+    <span>Updated October 2026</span>
+    <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+  </footer>
+</main>
+</body>
+</html>
